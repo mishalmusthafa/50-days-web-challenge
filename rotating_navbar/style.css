@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Lato', san-serif;
+  margin: 0;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+.container {
+  background-color: #fafafa;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -110px;
+  left: -110px;
+  z-index: 10;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle button#open {
+  left: 60%
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(110deg);
+  transform-origin: top left;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-90deg);
+}
+
+.content .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  max-width: 80%
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+nav ul li {
+  text-transform: capitalize;
+  font-size: 20px;
+  margin: 40px;
+  margin-left: 15px;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in;
+  color: #fafafa
+}
+
+nav ul li i {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+nav ul li+li {
+  margin-left: 35px;
+  transform: translateX(-150%);
+}
+
+nav ul li+li+li {
+  margin-left: 55px;
+  transform: translateX(-200%);
+}
+
+.container.show-nav+nav ul li {
+  transform: translateX(0%);
+  transition-delay: 0.35s;
+}
