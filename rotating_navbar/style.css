@@ -11,7 +11,16 @@ body {
   background-color: #333;
   color: #222;
   overflow-x: hidden;
-  /* overflow-y: hidden; */
+}
+
+a {
+  text-decoration: none;
+  color: #fafafa;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #ff7979;
 }
 
 .container {
